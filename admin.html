@@ -48,63 +48,59 @@
     </head>
     <main class="container my-5">
       <section>
-          <h1 class="display-3 text-center">Adminstrador de productos</h1>
-          <hr class="text-secondary" />
+        <h1 class="display-3 text-center">Adminstrador de productos</h1>
+        <hr class="text-secondary" />
         <article>
-            <h3>Cargar Producto</h3>
-            <hr />
+          <h3>Cargar Producto</h3>
+          <hr />
           <form id="formProducto">
             <div class="mb-3">
-              <label
-                for="codigo"
-                class="form-label"
-                >Codigo</label
-              >
-              <input type="text" class="form-control" id="codigo" placeholder="Ingresar un codigo"/>
+              <label for="codigo" class="form-label">Codigo</label>
+              <input
+                id="codigo"
+                type="text"
+                class="form-control"
+                placeholder="Ingresar un codigo"
+              />
+              <div class="valid-feedback">Datos correcto</div>
+              <div class="invalid-feedback">Datos incorrecto</div>
             </div>
             <div class="mb-3">
-              <label
-                for="producto"
-                class="form-label"
-                >Producto</label
-              >
-              <input type="text" class="form-control" id="producto" placeholder="Ingrese el producto"/>
+              <label for="producto" class="form-label">Producto</label>
+              <input
+                type="text"
+                class="form-control"
+                id="producto"
+                placeholder="Ingrese el producto"
+              />
             </div>
             <div class="mb-3">
-              <label
-                for="descripcion"
-                class="form-label"
-                >Descripcion</label
-              >
+              <label for="descripcion" class="form-label">Descripcion</label>
               <textarea id="descripcion" class="form-control"></textarea>
             </div>
             <div class="mb-3">
-              <label
-                for="cantidad"
-                class="form-label"
-                >Cantidad</label
-              >
-              <input type="text" class="form-control" id="cantidad" placeholder="ej: 5"/>
+              <label for="cantidad" class="form-label">Cantidad</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cantidad"
+                placeholder="ej: 5"
+              />
               <div class="invalid-feedback">
-                Este campo es obligatorio y la cantidad de caracteres debe ser entre 1 a 5
+                Valor incorrecto o supera los 3 digitos numericos
               </div>
             </div>
             <div class="mb-3">
-              <label
-                for="url"
-                class="form-label"
-                >URL</label
-              >
-              <input type="text" class="form-control" id="url"/>
+              <label for="url" class="form-label">URL</label>
+              <input type="text" class="form-control" id="url" />
             </div>
-            <button
-              type="submit"
-              class="btn btn-primary"
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <div
+              class="alert alert-danger mt-4 d-none"
+              role="alert"
+              id="msjAlerta"
             >
-              Guardar
-            </button>
-            <div class="alert alert-danger mt-4 d-none" role="alert" id="msjAlerta">
-                Debe completar todos los datos marcados
+              Debe completar todos los datos marcados
             </div>
           </form>
         </article>
@@ -116,5 +112,6 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/validaciones.js"></script>
   </body>
 </html>
