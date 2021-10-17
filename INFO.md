@@ -13,6 +13,13 @@
 - modulos: utilizamos para que en nuestro admin.html indiquemos un modulo al archivo js y nos permita relacionar con los otros archivos js
 - export = exporta una funcion fuera del mismo archivo
 - import = importa al mismo archivo el contenido de los archivos por fuera
+- JSON (JavaScript Object Notation) = formato que siempre tiene que estar escrito con "" (doble comilla)
+- localStorage = utilizamos para guardar datos de manera local en nuestro navegador
+- setItem() = metodo para guardar datos
+- getItem() = metodo para obtener datos
+- JSON.stringify() = transforma lo que sea a formato JSON
+- .reset() = solo limpia un value.
+- JSON.parse() = tranforma el codigo JSON a un objeto
 
 ## Pasos a reproducir
 
@@ -23,4 +30,7 @@
 - creamos archivo admin que contendra la logica de nuestro CRUD.
 - migramos las variables y eventos del archivo validaciones.js al admin.js con sus export e import.
 - Creamos un objeto Producto.
+- utilizamos localStorage para guardar los datos de nuestro array de productos de manera local.
+- Creacion de funcion para limpiar el formulario al momento de guardar.
+- Creacion de funcion para traer los datos del localstorage y no perder sus datos al reiniciar el navegador.
 - 
