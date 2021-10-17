@@ -2,15 +2,16 @@
 
 - onblur = evento para poner un foco al elemento y si lo pierde lo ejecuta.
 - this = en nuestro caso lo usamos para traer todo el **INPUT**, si colocamos .values traemos su valor.
-- trim() = si viene un usuario y no escribe nada en el input y pierde el foco no valida el campo, quita los espacios vacios de la cadena.
+- trim() = si viene un usuario y no escribe nada en el input y pierde el foco no valida el campo, quita los espacios vacios de la cadena al comienzo.
 - *clase "is-valid" = valida el campo del input
   *class="valid-feedback/invalid-feedback" = escribimos el texto que vamos a mostrar en los campos valido o invalido
 - addEventListener = lo usamos para agregar el evento desde el archivo js y no del html por seguridad
 - Se utilizo expresiones regulares (ver en developer Mozilla)
 - .test() = se encarga de verificar si cumple o no con la validacion, se pasa por parametro cual es la cadena de texto a evaluar
+- e.preventDefault(): metodo que nos permite hacer que la pagina no recargue al momento de ejecutar un evento del tipo submit de un boton.
 
 ## Pasos a reproducir
 
 - Creamos el formulario
-- Colamos los eventos onblur con su validacion
-- 
+- Colamos los eventos onblur con sus validacion para cada input
+- validamos los datos para el button.
