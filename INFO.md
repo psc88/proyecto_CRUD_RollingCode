@@ -37,4 +37,5 @@
 - Creamos maquetado de tabla para mostrar nuestros productos.
 - Creamos funcion crearFilas() dentro del admin.js para crear la logica de Read y poder visualizar los valores guardados en la tabla
 - Creamos funcion prepararEdicion() para poder mostrar los datos ya cargados nuevamente en la tabla 
-- 
+- Colocamos boton para agregar nuevo producto, con su respectiva funcion. 
+- creamos funcion actualizarProducto(), que nos permitira actualizar los datos del localstorage

@@ -63,7 +63,9 @@
                 placeholder="Ingresar un codigo"
               />
               <div class="valid-feedback">Datos correcto</div>
-              <div class="invalid-feedback">Valor incorrecto o no supera los 3 caracteres</div>
+              <div class="invalid-feedback">
+                Valor incorrecto o no supera los 3 caracteres
+              </div>
             </div>
             <div class="mb-3">
               <label for="producto" class="form-label">Producto</label>
@@ -104,23 +106,26 @@
             </div>
           </form>
         </article>
-        <article class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Cantdidad</th>
-                <th scope="col">url</th>
-                <th scope="col">Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tablaProducto">
-            </tbody>
-          </table>
-        </article>
-        <!-- HACER RESPONSIVE COMO TAREA -->
+        <section>
+          <button class="btn btn-primary mt-5" id="btnNuevoProducto">
+            Nuevo Producto
+          </button>
+          <article class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Cantdidad</th>
+                  <th scope="col">url</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tablaProducto"></tbody>
+            </table>
+          </article>
+        </section>
       </section>
     </main>
 
