@@ -78,6 +78,11 @@ function agregarProducto() {
   // cargar el producto nuevo en la fila de la tabla
   crearFilas(productoNuevo);
   // mostrar un mensaje al usuario
+  Swal.fire(
+    "Producto agregado",
+    "Su producto fue correctamente cargado",
+    "success"
+  );
 }
 
 function limpiarFormulario() {
@@ -145,38 +150,60 @@ function actualizarProducto() {
   console.log(posicionProducto);
 
   // modificar los datos de esa posicion del arreglo
-  listaProductos[posicionProducto].nombre = producto.value
-  listaProductos[posicionProducto].cantidad = cantidad.value
-  listaProductos[posicionProducto].descripcion = descripcion.value
-  listaProductos[posicionProducto].url = url.value
+  listaProductos[posicionProducto].nombre = producto.value;
+  listaProductos[posicionProducto].cantidad = cantidad.value;
+  listaProductos[posicionProducto].descripcion = descripcion.value;
+  listaProductos[posicionProducto].url = url.value;
 
   // modificar el localstorage
-  localStorage.setItem('arregloProducto', JSON.stringify(listaProductos))
+  localStorage.setItem("arregloProducto", JSON.stringify(listaProductos));
 
   // volver a dibujar la tabla
   borrarFilas();
-  listaProductos.forEach((itemProducto) => { crearFilas(itemProducto) })
+  listaProductos.forEach((itemProducto) => {
+    crearFilas(itemProducto);
+  });
 
   //limpiar formulario
   limpiarFormulario();
 }
 
-function borrarFilas(){
+function borrarFilas() {
   let tabla = document.querySelector("#tablaProducto");
-  tabla.innerHTML= '';
+  tabla.innerHTML = "";
 }
 
 window.eliminarProducto = (codigo) => {
-  console.log(codigo);
-  //aqui borramos el producto dentro del arreglo
-  let productosFiltrados = listaProductos.filter((itemProducto) => { return itemProducto.codigo != codigo });
+  Swal.fire({
+    title: "Esta seguro de eliminar este producto?",
+    text: "una vez eliminado el producto no se puede recuperar el producto",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar producto",
+    cancelButtonColor: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //agregar todo el codigo que borra el producto
+      console.log(codigo);
+      //aqui borramos el producto dentro del arreglo
+      let productosFiltrados = listaProductos.filter((itemProducto) => {
+        return itemProducto.codigo != codigo;
+      });
 
-  console.log(productosFiltrados)
-  // actualizar el arreglo lista Producto
-  listaProductos = productosFiltrados;
-  // actualizar el localstorage
-  localStorage.setItem('arregloProducto', JSON.stringify(listaProductos))
-  // dibujar nuevamente la tabla
-  borrarFilas();
-  listaProductos.forEach((itemProducto) => { crearFilas(itemProducto) })
-}
+      console.log(productosFiltrados);
+      // actualizar el arreglo lista Producto
+      listaProductos = productosFiltrados;
+      // actualizar el localstorage
+      localStorage.setItem("arregloProducto", JSON.stringify(listaProductos));
+      // dibujar nuevamente la tabla
+      borrarFilas();
+      listaProductos.forEach((itemProducto) => {
+        crearFilas(itemProducto);
+      });
+
+      Swal.fire("Producto eliminado!", "El producto se elimino corectamente", "success");
+    }
+  });
+};

@@ -23,7 +23,7 @@
 - .find() = nos permite buscar un elemento que coincide con una condicion logica, y cuando lo encuentra lo almacena dentro de la variable
 - .findIndex() = 
 - .filter() = todo lo que sea diferente, se usa para borrar
-
+- sweetalert2 = libreria para utilizar otros efectos.
 ## Pasos a reproducir
 
 - Creamos el formulario
@@ -42,3 +42,4 @@
 - Colocamos boton para agregar nuevo producto, con su respectiva funcion. 
 - creamos funcion actualizarProducto(), que nos permitira actualizar los datos del localstorage
 - crear funcion eliminarProducto(), que nos permite borrar un elemento de la tabla de productos
+- implementamos sweetalert para dar detalles de efectos.
