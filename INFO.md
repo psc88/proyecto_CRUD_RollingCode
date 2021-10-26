@@ -21,6 +21,8 @@
 - .reset() = solo limpia un value.
 - JSON.parse() = tranforma el codigo JSON a un objeto
 - .find() = nos permite buscar un elemento que coincide con una condicion logica, y cuando lo encuentra lo almacena dentro de la variable
+- .findIndex() = 
+- .filter() = todo lo que sea diferente, se usa para borrar
 
 ## Pasos a reproducir
 
@@ -39,3 +41,4 @@
 - Creamos funcion prepararEdicion() para poder mostrar los datos ya cargados nuevamente en la tabla 
 - Colocamos boton para agregar nuevo producto, con su respectiva funcion. 
 - creamos funcion actualizarProducto(), que nos permitira actualizar los datos del localstorage
+- crear funcion eliminarProducto(), que nos permite borrar un elemento de la tabla de productos

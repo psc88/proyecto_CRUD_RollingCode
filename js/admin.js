@@ -115,7 +115,7 @@ function crearFilas(itemProducto) {
     <td>${itemProducto.url}</td>
     <td>
     <button class="btn btn-warning" onclick="prepararEdicion(${itemProducto.codigo})">Editar</button>
-    <button class="btn btn-danger">Borrar</button>
+    <button class="btn btn-danger" onclick="eliminarProducto(${itemProducto.codigo})">Borrar</button>
     </td>
   </tr>`;
 }
@@ -164,4 +164,19 @@ function actualizarProducto() {
 function borrarFilas(){
   let tabla = document.querySelector("#tablaProducto");
   tabla.innerHTML= '';
+}
+
+window.eliminarProducto = (codigo) => {
+  console.log(codigo);
+  //aqui borramos el producto dentro del arreglo
+  let productosFiltrados = listaProductos.filter((itemProducto) => { return itemProducto.codigo != codigo });
+
+  console.log(productosFiltrados)
+  // actualizar el arreglo lista Producto
+  listaProductos = productosFiltrados;
+  // actualizar el localstorage
+  localStorage.setItem('arregloProducto', JSON.stringify(listaProductos))
+  // dibujar nuevamente la tabla
+  borrarFilas();
+  listaProductos.forEach((itemProducto) => { crearFilas(itemProducto) })
 }
