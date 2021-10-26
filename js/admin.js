@@ -205,5 +205,5 @@ window.eliminarProducto = (codigo) => {
 
       Swal.fire("Producto eliminado!", "El producto se elimino corectamente", "success");
     }
-  });
+  }); 
 };

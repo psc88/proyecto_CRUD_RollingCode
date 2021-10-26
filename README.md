@@ -24,6 +24,7 @@
 - .findIndex() = 
 - .filter() = todo lo que sea diferente, se usa para borrar
 - sweetalert2 = libreria para utilizar otros efectos.
+
 ## Pasos a reproducir
 
 - Creamos el formulario
@@ -43,3 +44,4 @@
 - creamos funcion actualizarProducto(), que nos permitira actualizar los datos del localstorage
 - crear funcion eliminarProducto(), que nos permite borrar un elemento de la tabla de productos
 - implementamos sweetalert para dar detalles de efectos.
+- trabajamos sobre app.js
