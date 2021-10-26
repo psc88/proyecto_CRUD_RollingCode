@@ -102,8 +102,22 @@ function crearFilas(itemProducto) {
     <td>${itemProducto.cantidad}</td>
     <td>${itemProducto.url}</td>
     <td>
-    <button class="btn btn-warning">Editar</button>
+    <button class="btn btn-warning" onclick="prepararEdicion(${itemProducto.codigo})">Editar</button>
     <button class="btn btn-danger">Borrar</button>
     </td>
   </tr>`;
 }
+
+window.prepararEdicion = (codigoProducto) =>{
+  console.log(codigoProducto)
+  // buscar el objeto
+  let productoBuscado = listaProductos.find((itemProducto) => {return itemProducto.codigo ==  codigoProducto})
+  console.log(productoBuscado)
+  // mostrarlo en el formulario
+  codigo.value = productoBuscado.codigo;
+  cantidad.value = productoBuscado.cantidad;
+  url.value = productoBuscado.url;
+  producto.value = productoBuscado.nombre;
+  descripcion.value = productoBuscado.descripcion;
+}
+

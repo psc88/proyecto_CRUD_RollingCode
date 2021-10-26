@@ -20,6 +20,7 @@
 - JSON.stringify() = transforma lo que sea a formato JSON
 - .reset() = solo limpia un value.
 - JSON.parse() = tranforma el codigo JSON a un objeto
+- .find() = nos permite buscar un elemento que coincide con una condicion logica, y cuando lo encuentra lo almacena dentro de la variable
 
 ## Pasos a reproducir
 
@@ -34,5 +35,6 @@
 - Creacion de funcion para limpiar el formulario al momento de guardar.
 - Creacion de funcion para traer los datos del localstorage y no perder sus datos al reiniciar el navegador.
 - Creamos maquetado de tabla para mostrar nuestros productos.
-- Creamos funcion crearFilas dentro del admin.js para crear la logica de Read y poder visualizar los valores guardados en la tabla
+- Creamos funcion crearFilas() dentro del admin.js para crear la logica de Read y poder visualizar los valores guardados en la tabla
+- Creamos funcion prepararEdicion() para poder mostrar los datos ya cargados nuevamente en la tabla 
 - 
