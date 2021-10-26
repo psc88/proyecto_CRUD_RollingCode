@@ -4,8 +4,8 @@ import {
   validarNumeros,
   validarURL,
   validarGeneral,
-} from './validaciones.js';
-import {Producto} from './productoClass.js'
+} from "./validaciones.js";
+import { Producto } from "./productoClass.js";
 
 // traer los input/textarea
 let codigo = document.querySelector("#codigo");
@@ -49,32 +49,61 @@ function guardarProducto(e) {
   }
 }
 
-function agregarProducto(){
-    // crear un objeto producto
-    let productoNuevo = new Producto(codigo.value, producto.value, descripcion.value, cantidad.value, url.value)
-    // cargar el producto dentro del arreglo
-    listaProductos.push(productoNuevo);
-    // al arreglo de productos lo almaceno en localstorage
-    localStorage.setItem('arregloProducto', JSON.stringify(listaProductos))
-    // limpiar el formulario
-    limpiarFormulario();
-    // mostrar un mensaje al usuario 
-
-    // mostrar el objeto en una tabla
+function agregarProducto() {
+  // crear un objeto producto
+  let productoNuevo = new Producto(
+    codigo.value,
+    producto.value,
+    descripcion.value,
+    cantidad.value,
+    url.value
+  );
+  // cargar el producto dentro del arreglo
+  listaProductos.push(productoNuevo);
+  // al arreglo de productos lo almaceno en localstorage
+  localStorage.setItem("arregloProducto", JSON.stringify(listaProductos));
+  // limpiar el formulario
+  limpiarFormulario();
+  // cargar el producto nuevo en la fila de la tabla
+  crearFilas(productoNuevo);
+  // mostrar un mensaje al usuario
+  
 }
 
 function limpiarFormulario() {
-    // limpiar los value de mis input
-    formulario.reset();
-    // limpiar los estilos
-    codigo.className = 'form-control';
-    cantidad.className = 'form-control';
-    url.className = 'form-control';
-    producto.className = 'form-control';
-    descripcion.className = 'form-control';
+  // limpiar los value de mis input
+  formulario.reset();
+  // limpiar los estilos
+  codigo.className = "form-control";
+  cantidad.className = "form-control";
+  url.className = "form-control";
+  producto.className = "form-control";
+  descripcion.className = "form-control";
 }
 
-function cargarInicial(){
-    // traer los productos del localstorage si existieran sino dejar el arreglo vacio.
-    listaProductos = JSON.parse(localStorage.getItem('arregloProducto')) || [];
+function cargarInicial() {
+  // traer los productos del localstorage si existieran sino dejar el arreglo vacio.
+  listaProductos = JSON.parse(localStorage.getItem("arregloProducto")) || [];
+
+  // si hay productos dentro del arreglo entonces los muestro en la tabla
+  listaProductos.forEach((itemProducto) => {
+    //codigo que ejecuta por cada elemento del arreglo
+    crearFilas(itemProducto);
+  });
+}
+
+function crearFilas(itemProducto) {
+  let tabla = document.querySelector("#tablaProducto");
+  console.log(itemProducto);
+  tabla.innerHTML += `<tr>
+    <th scope="row">${itemProducto.codigo}</th>
+    <td>${itemProducto.nombre}</td>
+    <td>${itemProducto.descripcion}</td>
+    <td>${itemProducto.cantidad}</td>
+    <td>${itemProducto.url}</td>
+    <td>
+    <button class="btn btn-warning">Editar</button>
+    <button class="btn btn-danger">Borrar</button>
+    </td>
+  </tr>`;
 }

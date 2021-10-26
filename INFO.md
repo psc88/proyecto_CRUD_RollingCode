@@ -33,4 +33,6 @@
 - utilizamos localStorage para guardar los datos de nuestro array de productos de manera local.
 - Creacion de funcion para limpiar el formulario al momento de guardar.
 - Creacion de funcion para traer los datos del localstorage y no perder sus datos al reiniciar el navegador.
+- Creamos maquetado de tabla para mostrar nuestros productos.
+- Creamos funcion crearFilas dentro del admin.js para crear la logica de Read y poder visualizar los valores guardados en la tabla
 - 
